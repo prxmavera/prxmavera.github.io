@@ -1,0 +1,266 @@
+<html>
+  <head>
+    <base href="." />
+    <head>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Almendra+SC&display=swap"
+        rel="stylesheet"
+      />
+    </head>
+    <style>
+      body {
+        margin: 0;
+        padding: 20px;
+        min-height: 100vh;
+        background: #2c1810;
+        font-family: "Almendra SC", fantasy;
+        background-image: linear-gradient(
+            rgba(44, 24, 16, 0.3) 1px,
+            transparent 1px
+          ),
+          linear-gradient(90deg, rgba(44, 24, 16, 0.3) 1px, transparent 1px);
+        background-size: 20px 20px;
+      }
+
+      .scroll {
+        background: #c5a980
+          url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"%3E%3Cfilter id="noise"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" stitchTiles="stitch" /%3E%3C/filter%3E%3Crect width="100" height="100" filter="url(%23noise)" opacity="0.2" /%3E%3C/svg%3E');
+        background-blend-mode: multiply;
+        background-size: cover;
+        padding: 80px 40px; /* Agrega suficiente padding superior e inferior */
+        box-sizing: border-box;
+        max-width: 800px;
+        margin: 40px auto;
+        position: relative;
+        line-height: 1.8;
+        border-radius: 10px;
+        box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5),
+          0 10px 15px rgba(0, 0, 0, 0.5);
+      }
+
+      .scroll::before,
+      .scroll::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 80px;
+        background: #a67c52;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        background-image: repeating-linear-gradient(
+          45deg,
+          rgba(139, 69, 19, 0.2) 0px,
+          rgba(139, 69, 19, 0.2) 2px,
+          transparent 2px,
+          transparent 10px
+        );
+      }
+
+      .scroll::before {
+        top: -20px; /* Ajusta la posición para que no toque el contenido */
+        height: 60px; /* Ajusta si es necesario */
+        transform: rotate(-2deg);
+      }
+
+      .scroll::after {
+        bottom: -20px; /* Ajusta la posición para que no toque el contenido */
+        height: 60px; /* Ajusta si es necesario */
+        transform: rotate(2deg);
+      }
+
+      .content {
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        color: #2c1810;
+        position: relative;
+        z-index: 1;
+      }
+
+      .title {
+        font-size: 32px;
+        color: #4a2511;
+        margin-bottom: 30px;
+        text-align: center;
+        font-weight: normal;
+        letter-spacing: 2px;
+      }
+
+      @keyframes flicker {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.9;
+        }
+      }
+      .content p {
+        animation: flicker 3s infinite;
+      }
+
+      @keyframes unroll {
+        from {
+          transform: translateY(-100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .typing {
+        opacity: 0;
+        animation: unroll 1.5s ease-out forwards;
+      }
+
+      /* Add papyrus texture */
+      .scroll {
+        position: relative;
+      }
+
+      .scroll::before {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.15'/%3E%3C/svg%3E");
+      }
+
+      /* Add scroll shadow effects */
+      .scroll {
+        box-shadow: inset 0 0 30px rgba(139, 69, 19, 0.2),
+          0 15px 25px rgba(0, 0, 0, 0.3);
+      }
+
+      .mechanics-list {
+        list-style-type: none; /* Elimina los puntos por defecto */
+        padding-left: 0;
+        margin-top: 20px;
+        color: #2c1810; /* Cambia el color a un tono oscuro, igual que el texto principal */
+      }
+
+      .mechanics-list li {
+        margin-bottom: 15px; /* Espaciado entre los puntos de la lista */
+        line-height: 1.6;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="scroll">
+      <div class="content">
+        <h1 class="title typing">Tutorial de juego</h1>
+        <p class="typing" style="animation-delay: 0.5s">Introducción:</p>
+        <p class="typing" style="animation-delay: 1s">
+          En un tiempo remoto, donde las sombras y la magia coexisten en una
+          lucha constante, un antiguo mal ha despertado de su letargo. Un
+          poderoso mago, último de su linaje, se alza contra las fuerzas oscuras
+          que han comenzado a consumir el reino. Ante él, un colosal jefe
+          invocado desde las profundidades olvidadas aguarda, alimentándose del
+          miedo y las almas caídas en batalla. Esta es la prueba final: si el
+          mago fracasa, el reino será sumido en una era de oscuridad
+          interminable. Pero si triunfa, la paz y la luz retornarán a la tierra.
+          Solo aquellos que dominan la magia más antigua podrán vencer a tan
+          temible enemigo… ¿Estás listo para desafiar lo imposible?
+        </p>
+        <h2 class="title typing" style="animation-delay: 1.5s">
+          MECANICAS DE JUEGO
+        </h2>
+
+        <h3 class="title typing" style="animation-delay: 1.5s">
+          MECANICAS DEL JUGADOR
+        </h3>
+
+        <ul class="mechanics-list typing" style="animation-delay: 3s">
+          <li>
+            <strong>Ataque sagrado:</strong> 3 a 7 puntos de daño. <br />
+            <strong>Costo de mana:</strong> Sin costo. <br />
+            <strong>Efecto adicional:</strong> Recuperas dos puntos de mana.
+            <br />
+            <strong>Efecto adicional:</strong> Si el daño es 4, te curas 7
+            puntos de vida.
+          </li>
+          <li>
+            <strong>Bola de fuego:</strong> 9 a 20 puntos de daño. <br />
+            <strong>Costo de mana:</strong> 2 puntos. <br />
+            <strong>Efecto adicional:</strong> Si el daño es menor a 14 y el
+            jefe no está quemado, lo envuelves en llamas durante 1 a 4 turnos,
+            causando 2 a 5 puntos de daño por turno.
+          </li>
+          <li>
+            <strong>Oración curativa:</strong> Te curas 10 a 25 puntos de vida.
+            <br />
+            <strong>Costo de mana:</strong> 2 puntos. <br />
+            <strong>Efecto adicional:</strong> Si la curación es menor a 14,
+            obtienes regeneración (recuperas 3 a 6 puntos de vida por turno
+            durante 3 a 6 turnos).
+          </li>
+          <li><strong>Rendirse:</strong> Te rindes y el jefe gana.</li>
+        </ul>
+
+        <h3 class="title typing" style="animation-delay: 4.5s">
+          MECANICAS DEL JEFE
+        </h3>
+
+        <ul class="mechanics-list typing" style="animation-delay: 6s">
+          <li>
+            El jefe realiza una accion <strong>a la par</strong> del jugador.
+            <br />
+            Al atacar, causa entre 5 a 12 puntos de daño. <br /><br />
+            Si el daño es mayor a 7, el jefe obtiene un alma (barra violeta
+            debajo de la vida). <br />
+            Si el daño es mayor a 8, el jefe se cura hasta 15 puntos de salud.
+          </li>
+          <li>
+            <strong>Furia desatada:</strong> El jefe inflige 50 puntos de daño.
+            <br />
+            El jefe tiene una oportunidad aleatoria de desatar su furia,
+            causando un golpe de 50 puntos de vida al jugador.
+          </li>
+          <li>
+            <strong>Ataque devastador:</strong> <br />
+            Si la batalla se extiende y se alcanza el turno 60, el jefe adquiere
+            una habilidad extra. <br />
+            A partir de este punto, en cada turno hay una probabilidad de que el
+            jefe realice un ataque que reduce la vida del jugador a cero de un
+            solo golpe.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("click", (e) => {
+        if (e.target.closest(".scroll")) {
+          const ripple = document.createElement("div");
+          ripple.style.position = "absolute";
+          ripple.style.width = "2px";
+          ripple.style.height = "2px";
+          ripple.style.background = "rgba(139, 69, 19, 0.2)";
+          ripple.style.borderRadius = "50%";
+          ripple.style.transform = "translate(-50%, -50%)";
+          ripple.style.left = e.clientX + "px";
+          ripple.style.top = e.clientY + "px";
+          ripple.style.animation = "ripple 1s ease-out forwards";
+
+          document.body.appendChild(ripple);
+
+          setTimeout(() => ripple.remove(), 1000);
+        }
+      });
+
+      const style = document.createElement("style");
+      style.textContent = `
+  @keyframes ripple {
+    from {
+      width: 2px;
+      height: 2px;
+      opacity: 1;
+    }
+    to {
+      width: 100px;
+      height: 100px;
+      opacity: 0;
+    }
+  }
+`;
+      document.head.appendChild(style);
+    </script>
+  </body>
+</html>
